@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:sqlserver://localhost:1433;databaseName=your_database_name
-    username: your_sqlserver_username
-    password: your_sqlserver_password
+    url: jdbc:sqlserver://localhost;databaseName=master;encrypt = false
+    username: sa
+    password: Fsoft123!
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
   jpa:
     database-platform: org.hibernate.dialect.SQLServerDialect
