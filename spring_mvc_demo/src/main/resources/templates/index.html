@@ -1,19 +1,67 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/css/index.css" />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index Page</title>
 </head>
 <body>
-    <p th:text="${name}"></p>
-    <form th:action="@{/api/saveUser}" th:object="${userInfo}" method="post">
-        <label for="firstName">First Name:</label>
-        <input type="text" id="firstName" th:field="*{firstName}"/><br/>
-
-        <label for="lastName">Last Name:</label>
-        <input type="text" id="lastName" th:field="*{lastName}"/><br/>
-
-        <button type="submit">Submit</button>
-    </form>
+<header>Admin</header>
+<main>
+    <nav>
+        <ul>
+            <a href="#"><li>Basic Information</li></a>
+            <a href="#"><li>import</li></a>
+            <a href="#"><li>User management</li></a>
+            <a href="#"><li>Department management</li></a>
+            <a href="#"><li>Position management</li></a>
+            <a href="#"><li>Equipment management</li></a>
+            <a href="#"><li>Application management</li></a>
+            <a href="#"><li>Workflow management</li></a>
+            <a href="#"><li>Time card management</li></a>
+            <a href="#"><li>Access rights management</li></a>
+            <a href="#"><li>Event Log management</li></a>
+        </ul>
+    </nav>
+    <section class="main">
+        <div class="head">Basic Information</div>
+        <br />
+        <div class="mid">
+            <button class="conf">
+                <i class="fa fa-gear fa-spin"></i>
+                Configuration
+            </button>
+            <br />
+            <div class="impt">Access from the house</div>
+            <div class="text">
+                It is the address to access from the house to the "Aipo". The house
+                of the user, please contact us to this address.
+            </div>
+            <div class="text">
+                <div style="font-weight: bold; margin-right: 5px">
+                    Aipo site (in-house)
+                </div>
+                Http: // 1 57.7.209.80 /
+            </div>
+            <div class="text" style="padding-bottom: 20px">
+                <button class="conf" style="margin-right: auto">To edit</button>
+            </div>
+            <div class="impt">Access from outside the company</div>
+            <div class="text">
+                The address for accessing the "Aipo" from outside the company. The
+                user of the outside, please contact us to this address
+            </div>
+            <div class="impt">Aipo site (Outside)</div>
+            <div class="text" style="padding-bottom: 20px">
+                <button class="conf" style="margin-right: auto">To edit</button>
+            </div>
+        </div>
+    </section>
+</main>
 </body>
 </html>

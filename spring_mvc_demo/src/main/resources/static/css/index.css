@@ -1,0 +1,86 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    margin: 0;
+    background-color: #cdcccc;
+}
+header {
+    background-color: #ffffff;
+    color: rgb(147, 147, 147);
+    text-align: right;
+    padding: 1em;
+    height: 10%;
+}
+main {
+    display: flex;
+
+}
+nav {
+    display: block;
+    margin: 10px 0 0 5px;
+    background-color: #ffffff;
+    width: 250px;
+    border-radius: 5px;
+    height: 80%;
+}
+nav ul {
+    list-style-type: none;
+    padding: 5px;
+}
+nav ul a li {
+    padding: 12px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+nav ul a :hover {
+    background-color: #e7e7e7;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.main {
+    margin-left: 10px;
+    margin-top: 10px;
+    background-color: #ffffff;
+    width: 81%;
+    height: 70%;
+    border-radius: 5px;
+}
+.head {
+    text-decoration: underline;
+    border-bottom: 1px solid #cdcccc;
+    width: 100%;
+    padding: 10px;
+}
+.mid {
+    padding: 10px;
+}
+.conf {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #cdcccc;
+    border-radius: 5px;
+    box-shadow: inset 0 0 20px #cdcccc;
+    display: block;
+    margin-left: auto;
+}
+.conf:hover {
+    background-color: #e7e7e7;
+}
+.conf:active {
+    background-color: #cdcccc;
+}
+.impt {
+    margin-top: 20px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    border-bottom: 1px solid #cdcccc;
+}
+.text {
+    margin-top: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #cdcccc;
+    display: flex;
+}
