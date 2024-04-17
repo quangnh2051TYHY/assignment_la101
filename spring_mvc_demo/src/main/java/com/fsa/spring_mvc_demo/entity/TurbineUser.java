@@ -51,7 +51,7 @@ public class TurbineUser {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "position_id")
-    private EipMCompany position;
+    private EipMPosition position;
 
     @Column(name = "in_telephone")
     private String inTelephone;
