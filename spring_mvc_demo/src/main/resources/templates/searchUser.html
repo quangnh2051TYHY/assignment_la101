@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="/css/searchUser.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search User Page</title>
+</head>
+<body>
+<header>Admin</header>
+<main>
+    <nav>
+        <ul>
+            <a href="index.html"><li>Basic Information</li></a>
+            <a href="#"><li>import</li></a>
+            <a href="#"><li>User management</li></a>
+            <a href="#"><li>Department management</li></a>
+            <a href="#"><li>Position management</li></a>
+            <a href="#"><li>Equipment management</li></a>
+            <a href="#"><li>Application management</li></a>
+            <a href="#"><li>Workflow management</li></a>
+            <a href="#"><li>Time card management</li></a>
+            <a href="#"><li>Access rights management</li></a>
+            <a href="#"><li>Event Log management</li></a>
+        </ul>
+    </nav>
+    <section class="main">
+        <div class="head">User management</div>
+        <br />
+        <button class="add-user">To add a user</button>
+        <br />
+        <div class="search">
+            <select class="search-input">
+                <option value="" selected hidden></option>
+                <option value="state">State</option>
+                <option value="username">username</option>
+                <option value="name">name</option>
+                <option value="department">Department name</option>
+                <option value="title">Title</option>
+            </select>
+            <button class="search-btn">Search</button>
+        </div>
+        <div class="function-buttons">
+            <button class="remove-btn">Remove</button>
+            <button class="func-btn">to enable</button>
+            <button class="func-btn">to disable</button>
+            <button class="func-btn">to change the order of the user</button>
+        </div>
+        <table>
+            <tr class="first-row">
+                <th id="check-box"><input type="checkbox" /></th>
+                <th id="state">State</th>
+                <th id="username">username</th>
+                <th id="name">name</th>
+                <th id="department">Department name</th>
+                <th id="title">Title</th>
+            </tr>
+        </table>
+        <div class="function-buttons">
+            <button class="remove-btn">Remove</button>
+            <button class="func-btn">to enable</button>
+            <button class="func-btn">to disable</button>
+        </div>
+        <div class="end-page"></div>
+    </section>
+</main>
+</body>
+</html>
