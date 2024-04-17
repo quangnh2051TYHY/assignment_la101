@@ -27,5 +27,5 @@ public class TurbineGroup {
     private String publicFlag;
 
     @OneToOne(mappedBy = "group")
-    private eipMPost post;
+    private EipMPost post;
 }

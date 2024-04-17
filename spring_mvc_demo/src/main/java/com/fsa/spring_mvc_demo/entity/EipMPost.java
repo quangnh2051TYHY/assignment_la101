@@ -8,7 +8,7 @@ import java.time.LocalDate;
 @Entity
 @Data
 @Table(name = "eip_m_post")
-public class eipMPost {
+public class EipMPost {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "post_id")
@@ -16,7 +16,7 @@ public class eipMPost {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "company_id")
-    private eipMCompany company;
+    private EipMCompany company;
 
     @Column(name = "post_name")
     private String postName;

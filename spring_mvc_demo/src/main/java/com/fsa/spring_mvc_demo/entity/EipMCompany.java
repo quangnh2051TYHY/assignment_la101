@@ -9,7 +9,7 @@ import java.util.List;
 @Entity
 @Data
 @Table(name = "eip_m_company")
-public class eipMCompany {
+public class EipMCompany {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "company_id")
@@ -49,7 +49,7 @@ public class eipMCompany {
     private LocalDate updateDate;
 
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
-    private List<eipMPost> postList;
+    private List<EipMPost> postList;
 
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
     private List<TurbineUser> userList;
