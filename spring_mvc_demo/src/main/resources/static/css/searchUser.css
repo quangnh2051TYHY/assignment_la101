@@ -60,7 +60,7 @@ nav ul a :hover {
 .end-page {
     margin-bottom: 20px;
 }
-.add-user {
+#add-user {
     background-color: #ff9912;
     border: none;
     color: white;
@@ -68,9 +68,47 @@ nav ul a :hover {
     padding: 5px;
     border-radius: 5px;
 }
-.add-user:hover {
+#add-user:hover {
     background-color: #ff9912;
     font-weight: bold;
+    cursor: pointer;
+}
+.overlay {
+    height: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(240,240,240,0.7);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+.addUser {
+    background-color: white;
+    width: 50vw;
+    height: 700px;
+    margin: auto;
+    padding: 10px;
+}
+.addUser .headAdd {
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #cdcccc;
+}
+.addUser .headAdd .left {
+    display: flex;
+}
+.icon {
+    width: 20px;
+    height: 20px;
+    background-color: #cdcccc;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .search {
     display: flex;
@@ -135,7 +173,7 @@ table {
     width: 30px;
 }
 #check-box input[type="checkbox"] {
-    accent-color: rgb(128, 128, 128);
+    accent-color: rgb(127, 127, 127);
 }
 #state {
     width: 70px;

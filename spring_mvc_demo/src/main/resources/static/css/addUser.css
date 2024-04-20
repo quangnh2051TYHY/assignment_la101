@@ -1,0 +1,118 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+body {
+    height: 600px;
+}
+form {
+    display: relative;
+    flex-direction: column;
+}
+.field-group, .input-group,
+.input-groups {
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
+.input-group {
+    display: inline;
+}
+.field {
+    font-weight: bold;
+}
+.note {
+    color: red;
+    font-size: 11px;
+}
+#login-name, #mail, #mobile-mail {
+    width: 200px;
+}
+#fname, #lname,
+#fname-kana, #lname-kana {
+    width: 100px;
+}
+#tel-extension {
+    width: 90px;
+}
+.tel-input {
+    width: 50px;
+}
+.add-file {
+    padding: 2px 30px;
+    border-radius: 2px;
+    border: 1px solid #cdcccc;
+}
+.add-file:hover {
+    background-color: #e7e7e7;
+    cursor: pointer;
+}
+.dept-container {
+    display: flex;
+    width: 370px;
+    background-color: #e7e7e7;
+    border: 5px solid #cdcccc;
+}
+.dept-table th, .dept-table td {
+    margin-left: 0;
+    padding: 0 10px;
+    text-align: left;
+}
+.dept-table td {
+    padding: 5px 10px;
+}
+#dept-input, #dept-list {
+    height: 60px;
+    vertical-align: top;
+    overflow-y: scroll;
+}
+#dept-list {
+    white-space: pre-line;
+}
+.btn-group th {
+    margin-top: 10px;
+    padding: 5px 10px;
+    text-align: right;
+}
+.pos-select {
+    width: 380px;
+    padding: 4px;
+}
+.pos-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><polygon points="0 0 12 0 6 12"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 8px top 50%;
+    background-size: 5px;
+}
+.new-input {
+    border: 1px solid #cdcccc;
+    border-radius: 2px;
+    padding: 5px 6px;
+    margin-top: 4px;
+}
+.new-input:hover {
+    background-color: #e7e7e7;
+    cursor: pointer;
+}
+#admin {
+    accent-color: grey;
+}
+.end-page {
+    text-align: center;
+}
+.end-page button {
+    border-radius: 5px;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.end-page button:hover {
+    font-weight: bold;
+}
+.submit-btn {
+    background-color: #ff9912;
+    color: white;
+}

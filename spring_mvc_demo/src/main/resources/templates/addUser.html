@@ -6,52 +6,191 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="/css/addUser.css" />
+    <link rel="stylesheet" href="/static/css/addUser.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add User Page</title>
 </head>
 <body>
 <form>
-    Add User
+    <div class="field-group">
+        <label class="field">login name</label>
+    </div>
+    <span class="note">*</span>
+    <div class="input-group">
+        <input type="text" id="login-name" />
+        <span class="note">(Alphanumeric)</span>
+    </div>
     <hr />
-    login-name
-    <input type="text" id="login-name" />
-    (Alphanumeric)
+    <div class="field-group">
+        <label class="field">password</label>
+    </div>
+    <span class="note">*</span>
+    <div class="input-group">
+        <input type="password" id="password" />
+    </div>
     <hr />
-    password
-    <input type="password" id="password" />
+    <div class="field-group">
+        <label class="field">Password (for confirmation)</label>
+    </div>
+    <span class="note">*</span>
+    <div class="input-group">
+        <input type="password" id="repassword" />
+    </div>
     <hr />
-    Password (for confirmation)
-    <input type="password" id="repassword" />
+    <div class="field-group">
+        <label class="field">name</label>
+    </div>
+    <span class="note">*</span>
+    <div class="input-group">
+        <input type="text" id="fname" />
+        <input type="text" id="lname" />
+    </div>
     <hr />
-    name
-    <input type="text" id="fname" />
-    <input type="text" id="lname" />
+    <div class="field-group">
+        <label class="field">Name: (Furigana)</label>
+    </div>
+    <span class="note">*</span>
+    <div class="input-group">
+        <input type="text" id="fname-kana" />
+        <input type="text" id="lname-kana" />
+    </div>
     <hr />
-    Name: (Furigana)
-    <input type="text" id="fname-kana" />
-    <input type="text" id="lname-kana" />
+    <div class="field-group">
+        <label class="field">mail address</label>
+    </div>
+    <div class="input-group">
+        <input type="text" id="mail" />
+        <span class="note">(Alphanumeric)</span>
+    </div>
     <hr />
-    mail address
-    <input type="text" id="mail" />
-    (Alphanumeric)
+    <div class="field-group">
+        <label class="field">Telephone number (outside line)</label>
+    </div>
+    <div class="input-group">
+        <input type="text" class="tel-input" /> -
+        <input type="text" class="tel-input" /> -
+        <input type="text" class="tel-input" />
+        <span class="note">(Byte numbers)</span>
+    </div>
     <hr />
-    Telephone number (outside line) (Byte numbers)
+    <div class="field-group">
+        <label class="field">Telephone number (extension)</label>
+    </div>
+    <div class="input-group">
+        <input type="text" class="phone-input" id="tel-extension" />
+        <span class="note">(Hyphen (-) or single-byte number)</span>
+    </div>
     <hr />
-    Telephone number (extension) (Hyphen (-) or single-byte number)
+    <div class="field-group">
+        <label class="field">Telephone number (mobile)</label>
+    </div>
+    <div class="input-group">
+        <input type="text" class="tel-input" /> -
+        <input type="text" class="tel-input" /> -
+        <input type="text" class="tel-input" />
+        <span class="note">(Byte numbers)</span>
+    </div>
     <hr />
-    Telephone number (mobile) (Byte numbers)
+    <div class="field-group">
+        <label class="field">Mobile e-mail address</label>
+    </div>
+    <div class="input-group">
+        <input type="text" id="mobile-mail" />
+        <span class="note">(Alphanumeric)</span>
+    </div>
     <hr />
-    Mobile e-mail address
-    <input type="text" id="mobile-mail" />
-    (Alphanumeric)
+    <div class="field-group">
+        <label class="field">Mug shot</label>
+    </div>
+    <div class="input-group">
+        <button class="add-file">Add file</button>
+    </div>
     <hr />
-    Mug shot
-    <button class="upload">Add file</button>
+    <div class="field-group">
+        <label class="field">Department</label>
+    </div>
+    <div class="input-groups">
+        Please add the department on the left side.
+        <div class="dept-container">
+            <table class="dept-table">
+                <tr>
+                    <th>Department</th>
+                    <th>Department List</th>
+                </tr>
+                <tr class="dept-textarea">
+                    <td><input type="text" id="dept-input" /></td>
+                    <td><textarea id="dept-list" readonly></textarea></td>
+                </tr>
+                <tr class="btn-group">
+                    <th><button id="deleteButton">Delete</button></th>
+                    <th><button id="addButton">Add</button></th>
+                </tr>
+            </table>
+        </div>
+    </div>
     <hr />
-    Department
+    <div class="field-group">
+        <label class="field">Position</label>
+    </div>
+    <div class="input-groups">
+        <select class="pos-select">
+            <option>Not specified</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+        </select>
+        <button class="new-input">The new input</button>
+    </div>
     <hr />
-    Position
+    <div class="field-group">
+        <label class="field">Administrative priveleges</label>
+    </div>
+    <div class="input-group">
+        <input type="checkbox" id="admin" />
+        To administrator
+    </div>
+    <hr />
+    <div class="end-page">
+        <button class="submit-btn">Adding</button>
+        <button class="close-btn">Close</button>
+    </div>
 </form>
 </body>
+<script>
+    var deptList = [];
+    document
+        .getElementById("addButton")
+        .addEventListener("click", function (event) {
+            addDepartment(event);
+        });
+
+    function addDepartment(event) {
+        event.preventDefault();
+        var input = document.getElementById("dept-input").value.trim();
+        var list = document.getElementById("dept-list");
+        if (input !== "") {
+            deptList.push(input);
+            list.value = deptList.join("\n");
+            document.getElementById("dept-input").value = "";
+        }
+    }
+
+    document
+        .getElementById("deleteButton")
+        .addEventListener("click", function (event) {
+            deleteDepartment(event);
+        });
+
+    function deleteDepartment(event) {
+        event.preventDefault();
+        var input = document.getElementById("dept-input").value.trim();
+        var list = document.getElementById("dept-list");
+        var index = deptList.indexOf(input);
+        if (index !== -1) {
+            deptList.splice(index, 1);
+            list.value = deptList.join("\n");
+            document.getElementById("dept-input").value = "";
+        }
+    }
+</script>
 </html>
