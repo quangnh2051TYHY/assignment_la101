@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/static/css/searchUser.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Search User Page</title>
+    <script src="/static/js/searchUser.js" defer></script>
 </head>
 <body>
 <header>Admin</header>
@@ -51,7 +52,7 @@
             <button class="func-btn">to disable</button>
             <button class="func-btn">to change the order of the user</button>
         </div>
-        <table>
+        <table id="dept-table">
             <tr class="first-row">
                 <th id="check-box"><input type="checkbox" /></th>
                 <th id="state">State</th>
@@ -91,12 +92,4 @@
     </div>
 </div>
 </body>
-<script>
-    function appear() {
-        document.getElementById("add").style.height = "100%";
-    }
-    function closeTab() {
-        document.getElementById("add").style.height = "0%";
-    }
-</script>
 </html>

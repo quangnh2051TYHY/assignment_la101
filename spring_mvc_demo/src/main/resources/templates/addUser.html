@@ -6,9 +6,10 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="/static/css/addUser.css" />
+    <link rel="stylesheet" href="static/css/addUser.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add User Page</title>
+    <script src="static/js/addUser.js" defer></script>
 </head>
 <body>
 <form>
@@ -17,7 +18,7 @@
     </div>
     <span class="note">*</span>
     <div class="input-group">
-        <input type="text" id="login-name" />
+        <input type="text" id="login-name" required />
         <span class="note">(Alphanumeric)</span>
     </div>
     <hr />
@@ -26,7 +27,7 @@
     </div>
     <span class="note">*</span>
     <div class="input-group">
-        <input type="password" id="password" />
+        <input type="password" id="password" required />
     </div>
     <hr />
     <div class="field-group">
@@ -34,7 +35,7 @@
     </div>
     <span class="note">*</span>
     <div class="input-group">
-        <input type="password" id="repassword" />
+        <input type="password" id="repassword" required />
     </div>
     <hr />
     <div class="field-group">
@@ -42,8 +43,8 @@
     </div>
     <span class="note">*</span>
     <div class="input-group">
-        <input type="text" id="fname" />
-        <input type="text" id="lname" />
+        <input type="text" id="fname" required />
+        <input type="text" id="lname" required />
     </div>
     <hr />
     <div class="field-group">
@@ -51,8 +52,8 @@
     </div>
     <span class="note">*</span>
     <div class="input-group">
-        <input type="text" id="fname-kana" />
-        <input type="text" id="lname-kana" />
+        <input type="text" id="fname-kana" required />
+        <input type="text" id="lname-kana" required />
     </div>
     <hr />
     <div class="field-group">
@@ -156,41 +157,4 @@
     </div>
 </form>
 </body>
-<script>
-    var deptList = [];
-    document
-        .getElementById("addButton")
-        .addEventListener("click", function (event) {
-            addDepartment(event);
-        });
-
-    function addDepartment(event) {
-        event.preventDefault();
-        var input = document.getElementById("dept-input").value.trim();
-        var list = document.getElementById("dept-list");
-        if (input !== "") {
-            deptList.push(input);
-            list.value = deptList.join("\n");
-            document.getElementById("dept-input").value = "";
-        }
-    }
-
-    document
-        .getElementById("deleteButton")
-        .addEventListener("click", function (event) {
-            deleteDepartment(event);
-        });
-
-    function deleteDepartment(event) {
-        event.preventDefault();
-        var input = document.getElementById("dept-input").value.trim();
-        var list = document.getElementById("dept-list");
-        var index = deptList.indexOf(input);
-        if (index !== -1) {
-            deptList.splice(index, 1);
-            list.value = deptList.join("\n");
-            document.getElementById("dept-input").value = "";
-        }
-    }
-</script>
 </html>

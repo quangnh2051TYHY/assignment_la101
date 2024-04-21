@@ -176,11 +176,10 @@ table {
     accent-color: rgb(127, 127, 127);
 }
 #state {
-    width: 70px;
-    padding: 5px;
+    width: 150px;
 }
 #username {
-    width: 280px;
+    width: 200px;
     text-decoration: underline;
 }
 #name {
