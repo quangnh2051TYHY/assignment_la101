@@ -1,10 +1,14 @@
 spring:
   datasource:
     url: jdbc:sqlserver://localhost;databaseName=master;encrypt = false
-    username: sa
+    username: SA
     password: Fsoft123!
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
   jpa:
     database-platform: org.hibernate.dialect.SQLServerDialect
     hibernate:
       ddl-auto: update
+  servlet:
+    multipart:
+      max-file-size: 300MB
+      max-request-size: 300MB

@@ -105,6 +105,8 @@ public class TurbineUser {
     @JoinColumn(name = "company_id")
     private EipMCompany eipMCompany;
 
+    private String department;
+
 
 
 
