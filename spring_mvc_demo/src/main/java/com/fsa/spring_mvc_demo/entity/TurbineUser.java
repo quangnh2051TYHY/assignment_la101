@@ -107,8 +107,4 @@ public class TurbineUser {
 
     private String department;
 
-
-
-
-
 }
