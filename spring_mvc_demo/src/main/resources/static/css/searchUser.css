@@ -86,7 +86,7 @@ nav ul a :hover {
 }
 .addUser {
     background-color: white;
-    width: 50vw;
+    width: 60vw;
     height: 700px;
     margin: auto;
     padding: 10px;
@@ -177,6 +177,7 @@ table {
 }
 #state {
     width: 150px;
+
 }
 #username {
     width: 200px;
@@ -191,4 +192,17 @@ table {
 }
 #title {
     width: 100px;
+}
+.close-btn {
+    position: absolute;
+    top: 690px;
+    right: 580px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+.close-btn:hover {
+    background-color: #e7e7e7;
+    font-weight: bold;
 }

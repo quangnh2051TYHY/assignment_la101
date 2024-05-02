@@ -43,6 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let repassword = document.getElementById("repassword");
     let fname = document.getElementById("fname");
     let lname = document.getElementById("lname");
+    let fnamekana = document.getElementById("fname-kana");
+    let lnamekana = document.getElementById("lname-kana");
     let deptName = document.getElementById("dept-list");
 
     document
@@ -60,6 +62,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 content.push(user);
                 window.localStorage.setItem("contentArray", JSON.stringify(content));
                 alert("User added successfully!");
+
+                // reset form
+                deptName.value = "";
+                const inputs = document.querySelectorAll("input");
+                inputs.forEach((input) => {
+                    input.value = "";
+                });
+                const selects = document.querySelectorAll("select");
+                selects.forEach((select) => {
+                    select.selectedIndex = 0;
+                });
             }
         });
 
@@ -71,10 +84,19 @@ document.addEventListener("DOMContentLoaded", function () {
             isValid = false;
         }
 
+        if (
+            username.value === "" ||
+            password.value === "" ||
+            repassword.value === "" ||
+            fname.value === "" ||
+            lname.value === "" ||
+            fnamekana.value === "" ||
+            lnamekana.value === "" ||
+            deptName.value === ""
+        ) {
+            alert("Please fill in require fields!");
+            isValid = false;
+        }
         return isValid;
     }
-});
-
-window.addEventListener("beforeunload", function () {
-    window.localStorage.setItem("contentArray", JSON.stringify(content));
 });
