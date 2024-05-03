@@ -1,11 +1,13 @@
 package com.fsa.spring_mvc_demo.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
-@Data
-@Table(name = "turbine_group")
+@Getter
+@Setter
+@Table(schema = "JSFW_L_A101",name = "turbine_group")
 public class TurbineGroup {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,12 +15,12 @@ public class TurbineGroup {
     private Integer groupId;
 
     @Column(name = "group_name")
-    private String groupName;
+    private String  groupName ;
 
     private String objectdata;
 
     @Column(name = "owner_id")
-    private Integer ownerId;
+    private String ownerId;
 
     @Column(name = "group_alias_name")
     private String groupAliasName;
@@ -26,6 +28,12 @@ public class TurbineGroup {
     @Column(name = "public_flag")
     private String publicFlag;
 
-    @OneToOne(mappedBy = "group")
-    private EipMPost post;
+    @OneToOne(mappedBy = "turbineGroup",cascade = CascadeType.ALL)
+     private EipMPost eipMPost;
+
+
+
+
+
+
 }

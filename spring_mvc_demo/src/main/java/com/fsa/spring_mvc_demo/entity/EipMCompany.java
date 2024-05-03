@@ -1,18 +1,20 @@
 package com.fsa.spring_mvc_demo.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.List;
 
 @Entity
-@Data
-@Table(name = "eip_m_company")
+@Getter
+@Setter
+@Table(schema = "JSFW_L_A101",name = "eip_m_company")
 public class EipMCompany {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "company_id")
+    @Column(name = "compony_id")
     private Integer companyId;
 
     @Column(name = "company_name")
@@ -21,7 +23,8 @@ public class EipMCompany {
     @Column(name = "company_name_kana")
     private String companyNameKana;
 
-    private String zipcode;
+    @Column(name = "zipcode")
+    private String zipCode;
 
     private String address;
 
@@ -32,12 +35,8 @@ public class EipMCompany {
 
     private String url;
 
-    private String ipaddress;
-
-    private String port;
-
-    @Column(name = "ipaddress_internal")
-    private String ipaddressInternal;
+    @Column(name = "ipaddess_internal")
+    private String ipaddessInternal;
 
     @Column(name = "port_internal")
     private String portInternal;
@@ -48,9 +47,11 @@ public class EipMCompany {
     @Column(name = "update_date")
     private LocalDate updateDate;
 
-    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
-    private List<EipMPost> postList;
+    @OneToMany(mappedBy = "eipMCompany",cascade = CascadeType.ALL)
+    private List<TurbineUser> turbineUserList;
 
-    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
-    private List<TurbineUser> userList;
+    @OneToMany(mappedBy = "eipMCompany",cascade = CascadeType.ALL)
+    private List<EipMPost> eipMPostList;
+
+
 }

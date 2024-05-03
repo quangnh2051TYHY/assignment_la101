@@ -1,13 +1,15 @@
 package com.fsa.spring_mvc_demo.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 
 @Entity
-@Data
-@Table(name = "turbine_user")
+@Getter
+@Setter
+@Table(schema = "JSFW_L_A101",name = "turbine_user")
 public class TurbineUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,27 +33,19 @@ public class TurbineUser {
     @Column(name = "confirm_value")
     private String confirmValue;
 
-    private LocalDate modified;
+    private String modified;
 
-    private LocalDate created;
+    private String created;
 
     @Column(name = "last_login")
-    private LocalDate lastLogin;
+    private String lastLogin;
 
     private String disabled;
 
     private String objectdata;
 
-    @Column(name = "password_changed")
+    @Column(name ="password_changed" )
     private String passwordChanged;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "company_id")
-    private EipMCompany company;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "position_id")
-    private EipMPosition position;
 
     @Column(name = "in_telephone")
     private String inTelephone;
@@ -66,13 +60,13 @@ public class TurbineUser {
     private String cellularMail;
 
     @Column(name = "cellular_uid")
-    private String cellularUID;
+    private String cellularUid;
 
     @Column(name = "first_name_kana")
-    private String firstNameKana;
+    public String firstNameKana;
 
     @Column(name = "last_name_kana")
-    private String lastNameKana;
+    public String lastNameKana;
 
     private String photo;
 
@@ -80,7 +74,7 @@ public class TurbineUser {
     private String hasPhoto;
 
     @Column(name = "photo_modified")
-    private String photoModified;
+    private String photoModified ;
 
     @Column(name = "photo_smartphone")
     private String photoSmartphone;
@@ -88,8 +82,8 @@ public class TurbineUser {
     @Column(name = "has_photo_smartphone")
     private String hasPhotoSmartphone;
 
-    @Column(name = "photo_modified_smartphone")
-    private String photoModifiedSmartphone;
+    @Column(name = "has_modified_smartphone")
+    private String hasModifiedSmartphone;
 
     @Column(name = "tutorial_forbid")
     private String tutorialForbid;
@@ -98,8 +92,19 @@ public class TurbineUser {
     private String migrateVersion;
 
     @Column(name = "created_user_id")
-    private Integer createdUserId;
+    private LocalDate createDate;
 
-    @Column(name = "updated_user_id")
-    private Integer updatedUserId;
+    @Column(name = "update_user_id")
+    private LocalDate updateDate;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "position_id")
+   private EipMPosition eipMPosition;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "company_id")
+    private EipMCompany eipMCompany;
+
+    private String department;
+
 }

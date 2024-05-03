@@ -1,27 +1,26 @@
 package com.fsa.spring_mvc_demo.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 
 @Entity
-@Data
-@Table(name = "eip_m_post")
+@Getter
+@Setter
+@Table(schema = "JSFW_L_A101",name = "eip_m_post")
 public class EipMPost {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "post_id")
     private Integer postId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "company_id")
-    private EipMCompany company;
-
     @Column(name = "post_name")
     private String postName;
 
-    private String zipcode;
+    @Column(name = "zipcode")
+    private String zipCode;
 
     private String address;
 
@@ -34,10 +33,6 @@ public class EipMPost {
     @Column(name = "fax_number")
     private String faxNumber;
 
-    @OneToOne
-    @JoinColumn(name = "group_name", referencedColumnName = "group_name")
-    private TurbineGroup group;
-
     private String sort;
 
     @Column(name = "create_date")
@@ -45,4 +40,14 @@ public class EipMPost {
 
     @Column(name = "update_date")
     private LocalDate updateDate;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "company_id")
+    private EipMCompany eipMCompany ;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "group_name")
+    private  TurbineGroup turbineGroup;
+
+
 }
