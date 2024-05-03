@@ -3,6 +3,7 @@ package com.fsa.spring_mvc_demo.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.mapping.List;
 
 import java.time.LocalDate;
 
@@ -105,8 +106,5 @@ public class TurbineUser {
     @JoinColumn(name = "company_id")
     private EipMCompany eipMCompany;
 
-
-
-
-
+    private String department;
 }
