@@ -1,5 +1,6 @@
 function appear() {
     document.getElementById("add").style.height = "100%";
+    document.getElementById("add-user-iframe").src = "/user/form";
 }
 function closeTab() {
     document.getElementById("add").style.height = "0%";

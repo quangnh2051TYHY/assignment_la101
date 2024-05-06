@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
     <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="/static/css/addUser.css" />
+    <link rel="stylesheet" th:href="@{/css/addUser.css}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add User Page</title>
-    <script src="/static/js/addUser.js" defer></script>
+    <script th:src="@{/js/addUser.js}" defer></script>
 </head>
 <body>
-<form>
+<form th:action="@{/user/create}" th:object="${newUser}" method="post">
     <div class="field-group">
         <label class="field">login name</label>
     </div>
     <span class="note">*</span>
     <div class="input-group">
-        <input type="text" id="login-name" required />
+        <input type="text" id="login-name" th:field="*{loginName}" required />
         <span class="note">(Alphanumeric)</span>
     </div>
     <hr />
@@ -27,7 +27,7 @@
     </div>
     <span class="note">*</span>
     <div class="input-group">
-        <input type="password" id="password" required />
+        <input type="password" id="password" th:field="*{password}" required />
     </div>
     <hr />
     <div class="field-group">
@@ -35,7 +35,7 @@
     </div>
     <span class="note">*</span>
     <div class="input-group">
-        <input type="password" id="repassword" required />
+        <input type="password" id="repassword" th:field="*{checkPassword}" required />
     </div>
     <hr />
     <div class="field-group">
@@ -43,8 +43,8 @@
     </div>
     <span class="note">*</span>
     <div class="input-group">
-        <input type="text" id="fname" required />
-        <input type="text" id="lname" required />
+        <input type="text" id="fname" th:field="*{firstName}" required />
+        <input type="text" id="lname" th:field="*{lastName}" required />
     </div>
     <hr />
     <div class="field-group">
@@ -52,15 +52,15 @@
     </div>
     <span class="note">*</span>
     <div class="input-group">
-        <input type="text" id="fname-kana" required />
-        <input type="text" id="lname-kana" required />
+        <input type="text" id="fname-kana" th:field="*{firstNameFurigana}" required />
+        <input type="text" id="lname-kana" th:field="*{lastNameFurigana}" required />
     </div>
     <hr />
     <div class="field-group">
         <label class="field">mail address</label>
     </div>
     <div class="input-group">
-        <input type="text" id="mail" />
+        <input type="text" id="mail" th:field="*{mailAddress}" />
         <span class="note">(Alphanumeric)</span>
     </div>
     <hr />
@@ -78,7 +78,7 @@
         <label class="field">Telephone number (extension)</label>
     </div>
     <div class="input-group">
-        <input type="text" class="phone-input" id="tel-extension" />
+        <input type="text" class="phone-input" id="tel-extension" th:field="*{telephoneNumberExtension}" />
         <span class="note">(Hyphen (-) or single-byte number)</span>
     </div>
     <hr />
@@ -96,7 +96,7 @@
         <label class="field">Mobile e-mail address</label>
     </div>
     <div class="input-group">
-        <input type="text" id="mobile-mail" />
+        <input type="text" id="mobile-mail" th:field="*{mobileEmailAddress}" />
         <span class="note">(Alphanumeric)</span>
     </div>
     <hr />

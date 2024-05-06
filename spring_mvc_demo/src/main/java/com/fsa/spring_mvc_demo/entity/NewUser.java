@@ -1,6 +1,5 @@
 package com.fsa.spring_mvc_demo.entity;
 
-import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +11,7 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class AddUser {
+public class NewUser {
     private String loginName;
     private String password;
 
@@ -28,11 +27,21 @@ public class AddUser {
 
     private String mailAddress;
 
-    private String telephoneNumber;
+    // telephoneNumber
+    private String tel1;
+
+    private String tel2;
+
+    private String tel3;
 
     private String telephoneNumberExtension;
 
-    private String telephoneNumberMobile;
+    // telephoneNumberMobile
+    private String telMobile1;
+
+    private String telMobile2;
+
+    private String telMobile3;
 
     private String mobileEmailAddress;
 
@@ -42,10 +51,5 @@ public class AddUser {
 
     private String position;
 
-    private boolean isadministrativePrivile;
-
-
-
-
-
+    private boolean isAdministrativePrivile;
 }

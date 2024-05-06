@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
     <link
@@ -7,17 +7,17 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
 
-    <link rel="stylesheet" href="/static/css/searchUser.css" />
+    <link th:href="@{/css/searchUser.css}" rel="stylesheet"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Search User Page</title>
-    <script src="/static/js/searchUser.js" defer></script>
+    <script th:src="@{/js/searchUser.js}" defer></script>
 </head>
 <body>
 <header>Admin</header>
 <main>
     <nav>
         <ul>
-            <a href="index.html"><li>Basic Information</li></a>
+            <a th:href="@{/user/index}"><li>Basic Information</li></a>
             <a href="#"><li>import</li></a>
             <a href="#"><li>User management</li></a>
             <a href="#"><li>Department management</li></a>
@@ -33,7 +33,7 @@
     <section class="main">
         <div class="head">User management</div>
         <br />
-        <button id="add-user" onclick="appear()">To add a user</button>
+        <button id="add-user" th:onclick="appear()">To add a user</button>
         <br />
         <div class="search">
             <select class="search-input">
@@ -79,17 +79,17 @@
                 </div>
                 Add User
             </div>
-            <button style="font-weight: bold" onclick="closeTab()">X</button>
+            <button style="font-weight: bold" th:onclick="closeTab()">X</button>
         </div>
         <main>
             <iframe
-                    src="addUser.html"
+                    th:src="@{/user/form}"
                     width="100%"
                     height="1000px"
                     style="border: none"
             ></iframe>
         </main>
-        <button class="close-btn" onclick="closeTab()">Close</button>
+        <button class="close-btn" th:onclick="closeTab()">Close</button>
     </div>
 </div>
 </body>

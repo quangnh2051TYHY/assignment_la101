@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="/static/css/index.css" />
+    <link rel="stylesheet" th:href="@{/css/index.css}" />
     <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -17,7 +17,7 @@
         <ul>
             <a href="#"><li>Basic Information</li></a>
             <a href="#"><li>import</li></a>
-            <a href="searchUser.html"><li>User management</li></a>
+            <a th:href="@{/user}"><li>User management</li></a>
             <a href="#"><li>Department management</li></a>
             <a href="#"><li>Position management</li></a>
             <a href="#"><li>Equipment management</li></a>

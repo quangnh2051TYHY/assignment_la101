@@ -1,28 +1,41 @@
 package com.fsa.spring_mvc_demo.controller;
 
-import com.fsa.spring_mvc_demo.entity.AddUser;
+import com.fsa.spring_mvc_demo.entity.NewUser;
 import com.fsa.spring_mvc_demo.service.TurbineService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Repository;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 
 @Controller
-@RequestMapping("/controller")
+@RequestMapping("/user")
 public class TurbineUserController {
 
     @Autowired
     TurbineService turbineService;
 
-    @PostMapping("/create")
-    public ResponseEntity<?> addUser(@RequestPart AddUser addUser, @RequestPart MultipartFile file){
-        addUser.setMugShort(file);
-        AddUser user = turbineService.addUser(addUser);
-        ResponseEntity<AddUser> response = ResponseEntity.ok(addUser);
+    @GetMapping("/index")
+    public String index() {
+        return "index";
+    }
 
-        return response;// TODO noi dung trang html
+    @GetMapping
+    public String loadIndexPage(Model model){
+        model.addAttribute("newUser", new NewUser());
+        return "searchUser";
+    }
+
+    @GetMapping("/form")
+    public String addUserForm(Model model) {
+        model.addAttribute("newUser", new NewUser());
+        return "addUser";
+    }
+
+    @PostMapping("/create")
+    public String addUser(@ModelAttribute NewUser newUser, Model model) {
+        model.addAttribute("newUser", new NewUser());
+        turbineService.addUser(newUser);
+        return "addUser";
     }
 }
