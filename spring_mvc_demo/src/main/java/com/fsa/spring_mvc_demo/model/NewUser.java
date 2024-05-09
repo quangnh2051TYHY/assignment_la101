@@ -1,4 +1,4 @@
-package com.fsa.spring_mvc_demo.entity;
+package com.fsa.spring_mvc_demo.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 public class NewUser {
     private String loginName;
+
     private String password;
 
     private String checkPassword;
@@ -47,7 +48,7 @@ public class NewUser {
 
     private MultipartFile mugShort;
 
-    private List<String> department;
+    private String department;
 
     private String position;
 

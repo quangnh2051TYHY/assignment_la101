@@ -9,10 +9,11 @@
     <link rel="stylesheet" th:href="@{/css/addUser.css}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add User Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <script th:src="@{/js/addUser.js}" defer></script>
 </head>
 <body>
-<form th:action="@{/user/create}" th:object="${newUser}" method="post">
+<form th:action="@{/user/create}" th:object="${newUser}" method="post" id="addUserForm">
     <div class="field-group">
         <label class="field">login name</label>
     </div>
@@ -68,9 +69,9 @@
         <label class="field">Telephone number (outside line)</label>
     </div>
     <div class="input-group">
-        <input type="text" class="tel-input" /> -
-        <input type="text" class="tel-input" /> -
-        <input type="text" class="tel-input" />
+        <input type="text" class="tel-input" th:field="*{tel1}"/> -
+        <input type="text" class="tel-input" th:field="*{tel2}"/> -
+        <input type="text" class="tel-input" th:field="*{tel3}"/>
         <span class="note">(Byte numbers)</span>
     </div>
     <hr />
@@ -86,9 +87,9 @@
         <label class="field">Telephone number (mobile)</label>
     </div>
     <div class="input-group">
-        <input type="text" class="tel-input" /> -
-        <input type="text" class="tel-input" /> -
-        <input type="text" class="tel-input" />
+        <input type="text" class="tel-input" th:field="*{telMobile1}"/> -
+        <input type="text" class="tel-input" th:field="*{telMobile2}"/> -
+        <input type="text" class="tel-input" th:field="*{telMobile3}"/>
         <span class="note">(Byte numbers)</span>
     </div>
     <hr />
@@ -120,7 +121,7 @@
                 </tr>
                 <tr class="dept-textarea">
                     <td><input type="text" id="dept-input" /></td>
-                    <td><textarea id="dept-list" readonly></textarea></td>
+                    <td><textarea id="dept-list" th:field="*{department}" readonly></textarea></td>
                 </tr>
                 <tr class="btn-group">
                     <th><button id="deleteButton">Delete</button></th>
@@ -152,8 +153,10 @@
     </div>
     <hr />
     <div class="end-page">
-        <button class="submit-btn">Adding</button>
+        <button class="submit-btn" type="submit">Adding</button>
     </div>
 </form>
+<div th:if="${message}" class="success-message" th:text="${message}"></div>
+<div th:if="${error}" class="error-message" th:text="${error}"></div>
 </body>
 </html>

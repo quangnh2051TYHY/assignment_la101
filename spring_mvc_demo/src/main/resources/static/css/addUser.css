@@ -116,3 +116,10 @@ form {
     background-color: #ff9912;
     color: white;
 }
+.success-message, .error-message {
+    color: red;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}

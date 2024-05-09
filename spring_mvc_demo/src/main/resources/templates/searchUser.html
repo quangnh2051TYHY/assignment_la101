@@ -10,6 +10,7 @@
     <link th:href="@{/css/searchUser.css}" rel="stylesheet"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Search User Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     <script th:src="@{/js/searchUser.js}" defer></script>
 </head>
 <body>
@@ -47,7 +48,7 @@
             <button class="search-btn">Search</button>
         </div>
         <div class="function-buttons">
-            <button class="remove-btn">Remove</button>
+            <button class="remove-btn" th:onclick="removeSelectedUsers()">Remove</button>
             <button class="func-btn">to enable</button>
             <button class="func-btn">to disable</button>
             <button class="func-btn">to change the order of the user</button>
@@ -61,9 +62,19 @@
                 <th id="department">Department name</th>
                 <th id="title">Title</th>
             </tr>
+
+            <tr th:each="userDetail: ${userDetailList}">
+                <td><input type="checkbox" class="userCheckbox" th:value="${userDetail.loginName}"></td>
+                <td>Effectiveness</td>
+                <td th:text="${userDetail.loginName}"></td>
+                <td th:text="${userDetail.name}"></td>
+                <td th:text="${userDetail.department}"></td>
+                <td></td>
+            </tr>
+
         </table>
         <div class="function-buttons">
-            <button class="remove-btn">Remove</button>
+            <button class="remove-btn" th:onclick="removeSelectedUsers()">Remove</button>
             <button class="func-btn">to enable</button>
             <button class="func-btn">to disable</button>
         </div>
