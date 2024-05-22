@@ -33,27 +33,3 @@ function deleteDepartment(event) {
         document.getElementById("dept-input").value = "";
     }
 }
-
-$(document).ready(function(){
-    $('#addUserForm').submit(function(event) {
-        // event.preventDefault();
-
-        $.ajax({
-            type: "POST",
-            url: "/user/create",
-            data: $(this).serialize(), // Lấy dữ liệu từ form
-            success: function(response) {
-                // Nếu có thông báo thành công từ server
-                if (response && response.message) {
-                    alert(response.message);
-                    location.reload();
-                }
-            },
-            error: function(xhr, status, error) {
-                // Hiển thị thông báo lỗi từ server
-                var errorMessage = xhr.responseJSON ? xhr.responseJSON.error : "Unknown error occurred";
-                alert(errorMessage);
-            }
-        });
-    });
-});

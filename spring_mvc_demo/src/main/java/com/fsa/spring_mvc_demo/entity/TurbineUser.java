@@ -16,7 +16,7 @@ public class TurbineUser {
     @Column(name = "user_id")
     private Integer userId;
 
-    @Column(name = "login_name")
+    @Column(name = "login_name", unique = true)
     private String loginName;
 
     @Column(name = "password_value")
